@@ -26,6 +26,20 @@ passwordField.addEventListener("input", () => {
   passwordValidation(passwordField);
 });
 
+function showFields() {
+  var checkbox = document.getElementById("myCheckbox");
+  var phoneF = document.getElementById("phone");
+  var dobF = document.getElementById("dob");
+
+  if (checkbox.checked === true) {
+    phoneF.style.display = "block";
+    dobF.style.display = "block";
+  } else {
+    phoneF.style.display = "none";
+    dobF.style.display = "none";
+  }
+}
+
 const phoneField = document.querySelector("[name='phone']");
 phoneField.addEventListener("input", () => {
   requiredValidation(phoneField);
@@ -54,13 +68,13 @@ confirmPasswordField.addEventListener("input", () => {
   validConfirmPassword();
 });
 
-const checkboxField = document.querySelector("[name='more']");
-const showPhone = document.querySelector("phone");
-const showBirth = document.querySelector("birthDate");
-checkboxField.addEventListener("change", () => {
-  showPhone.hidden = checkboxField.checked;
-  showBirth.hidden = checkboxField.checked;
-});
+// const checkboxField = document.querySelector("[name='more']");
+// const showPhone = document.querySelector("phone");
+// const showBirth = document.querySelector("birthDate");
+// checkboxField.addEventListener("change", () => {
+//   showPhone.hidden = checkboxField.checked;
+//   showBirth.hidden = checkboxField.checked;
+// });
 
 function requiredValidation(field) {
   const errorField = document.querySelector(
@@ -196,7 +210,8 @@ function validForm() {
     emailValidation(emailField) ||
     passwordValidation(passwordField) ||
     validAge() ||
-    validConfirmPassword()
+    validConfirmPassword() ||
+    showFields()
   ) {
     return false;
   }
