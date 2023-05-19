@@ -68,14 +68,6 @@ confirmPasswordField.addEventListener("input", () => {
   validConfirmPassword();
 });
 
-// const checkboxField = document.querySelector("[name='more']");
-// const showPhone = document.querySelector("phone");
-// const showBirth = document.querySelector("birthDate");
-// checkboxField.addEventListener("change", () => {
-//   showPhone.hidden = checkboxField.checked;
-//   showBirth.hidden = checkboxField.checked;
-// });
-
 function requiredValidation(field) {
   const errorField = document.querySelector(
     `[name='${field.name}'] + span.error`
