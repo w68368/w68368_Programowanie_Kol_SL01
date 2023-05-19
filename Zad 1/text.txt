@@ -1,0 +1,1 @@
+Polecenie git push służy do przekazywania zawartości repozytorium lokalnego do zdalnego repozytorium. Wypychanie umożliwia przesłanie commitów z repozytorium lokalnego do zdalnego.
