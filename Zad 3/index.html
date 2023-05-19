@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 20px;
+        }
+
+        .control {
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .actions {
+            justify-content: center;
+        }
+
+        .error {
+            color: #F00
+        }
+
+        .contactAddress input, .province input, .province select {
+            width: 100%;
+        }
+    </style>
+
+<script type="text/javascript" defer src="index.js">
+</script>
+</head>
+
+<body>
+    <form class="form" name="form" method="post" novalidate>
+        <div class="control">
+            <label>Login</label>
+            <input type="text" name="login">
+            <span class="error"></span>
+        </div>
+        <div class="control">
+            <label>Email: </label>
+            <input type="text" name="email">
+            <span class="error"></span>
+        </div>
+        <div class="control">
+            <label>Hasło: </label>
+            <input type="password" name="password">
+            <span class="error"></span>
+        </div>
+        <div class="control">
+            <label>Powtórz Hasło: </label>
+            <input type="password" name="confirm-password">
+            <span class="error"></span>
+        </div>
+        <div class="control" hidden>
+            <label>Telefon: </label>
+            <input type="text" name="phone">
+            <span class="error"></span>
+        </div>
+        <div class="control" hidden>
+            <label>Data urodzenia: </label>
+            <input type="date" name="birthDate">
+            <span class="error"></span>
+        </div>
+        <div class="control">
+            <label>Kraj: </label>
+            <select name="country">
+                <option></option>
+                <option value="Polska">Polska</option>
+                <option value="Ukraina">Ukraina</option>
+                <option value="Litwa">Litwa</option>
+                <option value="Niemcy">Niemcy</option>
+            </select>
+            <span class="error"></span>
+        </div>
+        <div class="province">
+            <label>Województwo: </label>
+            <input type="text" disabled name="province">
+            <span class="error"></span>
+        </div>
+        <div class="province select" hidden>
+            <label>Województwo: </label>
+            <select name="province" disabled>
+                <option></option>
+                <option value="Podkarpacie">Podkarpacie</option>
+                <option value="Małopolska">Małopolska</option>
+                <option value="Mazowsze">Mazowsze</option>
+                <option value="Wielkopolska">Wielkopolska</option>
+            </select>
+            <span class="error"></span>
+        </div>
+        <div class="control">
+            <label>Adres zamieszkania: </label>
+            <input type="text" disabled name="address">
+            <span class="error"></span>
+        </div>
+        <div>
+            <input type="checkbox" checked name="hasSameContactAddress">
+            <label>Adres korespodencyjny taki sam jak zamieszkania </label>
+        </div>
+        <div class="contactAddress" hidden>
+            <label>Adres korespodencyjny: </label>
+            <input type="text" disabled name="contactAddress">
+            <span class="error"></span>
+        </div>
+
+        <div class="control actions">
+            <input type="submit" value="Zapisz">
+        </div>
+    </form>
+</body>
+
+</html>
